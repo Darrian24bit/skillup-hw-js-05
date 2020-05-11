@@ -34,15 +34,27 @@ let arr = [
   },
 ];
 
-newobj8t = [];
-function tt11(obj, key, znach) {
-  for (i = 0; i <= obj.length - 1; i++) {
-    let keysys = Object.keys(obj[i]);
-    let maleee = Object.values(obj[i]);
-    if (keysys.indexOf(key) > 0 && maleee.indexOf(znach) > 0) {
-      newobj8t.push(obj[i]);
-    }
+// newobj8t = [];
+// function tt11(obj, key, znach) {
+//   for (i = 0; i <= obj.length - 1; i++) {
+//     let keysys = Object.keys(obj[i]);
+//     let maleee = Object.values(obj[i]);
+//     if (keysys.indexOf(key) > 0 && maleee.indexOf(znach) > 0) {
+//       newobj8t.push(obj[i]);
+//     }
+//   }
+//   console.log(newobj8t);
+// }
+// tt11(arr, "gender", "male");
+
+function funcGetUsers(users, key, value) {
+  if (users && key && value) {
+    let newArr = users.filter((item) => {
+      return item[key] === value;
+    });
+    return newArr;
+  } else {
+    console.log("не все аргументы");
   }
-  console.log(newobj8t);
 }
-tt11(arr, "gender", "male");
+console.log(funcGetUsers(arr, "name", "age"));

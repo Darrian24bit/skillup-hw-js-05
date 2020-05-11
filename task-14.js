@@ -9,19 +9,14 @@ const products = [
 ];
 
 const calculateTotalPrice = function (allProdcuts, productName) {
-  const [a, b, c, d] = allProdcuts;
-  if (productName == a.name) {
-    return a.price * a.quantity;
-  } else if (productName == b.name) {
-    return b.price * b.quantity;
-  } else if (productName == c.name) {
-    return c.price * c.quantity;
-  } else if (productName == d.name) {
-    return d.price * d.quantity;
-  }
+  let result = 0;
+  allProdcuts.forEach((element) => {
+    if (element.name === productName) {
+      result = element.price * element.quantity;
+    }
+  });
+  return result;
 };
-
-// Вызовы функции для проверки работоспособности твоей реализации.
 
 console.log(calculateTotalPrice(products, "Радар")); // 5200
 
